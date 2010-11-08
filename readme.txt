@@ -16,9 +16,7 @@ Real estate search for U.S., Canada, UK, Australia
 Real Estate Finder are saved on our database, so you don't need to have space for all that information. 
 
 <b>Try the Demo</b>
-
 If you're interested in seeing what a default installation of Real Estate Finder has to offer, try out the <a target="_blank" href="http://www.worldestatesite.com/">Real Estate Finder</a>
-
 
 == Installation ==
 
@@ -35,7 +33,6 @@ If you're interested in seeing what a default installation of Real Estate Finder
 Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
-
 
   = 1.0 =
  First stable version.
