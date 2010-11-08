@@ -154,7 +154,11 @@ Real estate search for U.S., Canada, UK, Australia</b> </p>
 Jobs search for U.S., Canada, UK, Australia</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/jobs-finder/">Jobs Finder</h3></a>
  <hr /> <hr />
-
+ <h2>Funny video online</h2>
+<p><b>Plugin "Funny video online" displays Funny video on your blog. There are over 10,000 video clips.
+Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
+ <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
+ <hr /> <hr />
 		<h2>Recipe of the Day</h2>
 <p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/recipe-of-the-day/">Recipe of the Day</h3></a>
@@ -173,7 +177,6 @@ Jobs search for U.S., Canada, UK, Australia</b> </p>
 	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
 	<li><a target="_blank" href="http://www.easyfreeads.com/">Easy Free Ads</a></li>
 	<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site, Sell your Home, Search Homes</a></li>
-<!-- 	<li><a target="_blank" href="http://www.facebook.com/pages/Looking-for-Better-Job/168557646494205">Promote site on Facebook</a></li>	 -->
 </ul>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/wp-social-bookmarking/">WP Social Bookmarking</h3></a>
 </p>
