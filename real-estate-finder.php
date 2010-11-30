@@ -4,17 +4,14 @@ Plugin Name:   Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
-Version: 1.1
+Version: 1.2
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 License: GPL2
 */
-
-define(real_estate_finder_READER_URL_RSS_DEFAULT, 'http://www.worldestatesite.com/feed/');
-define(real_estate_finder_READER_TITLE, 'Real Estate Finder');
-define(real_estate_finder_MAX_SHOWN_ITEMS, 10);
-define(real_estate_finder_DESCRIPTION_COUNT_CHARS, 500);
-
+define(real_estate_finder_URL_RSS_DEFAULT, 'http://www.worldestatesite.com/feed/');
+define(real_estate_finder_TITLE, 'Real Estate Finder');
+define(real_estate_finder_MAX_SHOWN_ITEMS, 5);
 
 function real_estate_finder_widget_ShowRss($args)
 {
@@ -28,12 +25,11 @@ function real_estate_finder_widget_ShowRss($args)
 	$options = get_option('real_estate_finder_widget');
 
 	if( $options == false ) {
-		$options[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_READER_TITLE;
-		$options[ 'real_estate_finder_widget_RSS_url' ] = real_estate_finder_READER_URL_RSS_DEFAULT;
+		$options[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$options[ 'real_estate_finder_widget_RSS_count_items' ] = real_estate_finder_MAX_SHOWN_ITEMS;
 	}
 
- $RSSurl = real_estate_finder_READER_URL_RSS_DEFAULT;
+ $RSSurl = real_estate_finder_URL_RSS_DEFAULT;
 	$messages = fetch_rss($RSSurl);
 	$title = $options[ 'real_estate_finder_widget_url_title' ];
 $output = '<!-- Real Estate Finder:  http://www.onlinerel.com/wordpress-plugins/ -->';
@@ -76,7 +72,7 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 </select><br />'; 
 $output .= '<center><input type="submit" name="submit" class="submit" value="Search" /></center> </form><br />';
 // end search form
-	$worldest = 'http://www.worldestatesite.com/';
+//	$worldest = 'http://www.worldestatesite.com/';
 	$messages_count = count($messages->items);
 	if($messages_count != 0){
 	 $output .= '<b>Property For sale:</b>';	
@@ -84,7 +80,7 @@ $output .= '<center><input type="submit" name="submit" class="submit" value="Sea
 		for($i=0; $i<$options['real_estate_finder_widget_RSS_count_items'] && $i<$messages_count; $i++)
 		{			
 			$output .= '<li>';
-				$output .= '<a target="_blank" href="'.$worldest.'">'.$messages->items[$i]['title'].'</a></span>';						
+				$output .= '<a target="_blank" href="'.$messages->items[$i]['link'].'">'.$messages->items[$i]['title'].'</a></span>';						
 				$output .= '</li>';
 		}
 		$output .= '</ul>';
@@ -103,21 +99,18 @@ function real_estate_finder_widget_Admin()
 	$options = $newoptions = get_option('real_estate_finder_widget');	
 	//default settings
 	if( $options == false ) {
-		$newoptions[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_READER_TITLE;
-		$newoptions[ 'real_estate_finder_widget_RSS_url' ] = real_estate_finder_READER_URL_RSS_DEFAULT;
+		$newoptions[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$newoptions['real_estate_finder_widget_RSS_count_items'] = real_estate_finder_MAX_SHOWN_ITEMS;		
 	}
 	if ( $_POST["real_estate_finder_widget-submit"] ) {
 		$newoptions['real_estate_finder_widget_url_title'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_url_title"]));
-		$newoptions['real_estate_finder_widget_RSS_url'] = real_estate_finder_READER_URL_RSS_DEFAULT;
-		$newoptions['real_estate_finder_widget_RSS_count_items'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_RSS_count_items"]));
+			$newoptions['real_estate_finder_widget_RSS_count_items'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_RSS_count_items"]));
 	}	
 	if ( $options != $newoptions ) {
 		$options = $newoptions;
 		update_option('real_estate_finder_widget', $options);		
 	}
 	$real_estate_finder_widget_url_title = wp_specialchars($options['real_estate_finder_widget_url_title']);
-	$real_estate_finder_widget_RSS_url = real_estate_finder_READER_URL_RSS_DEFAULT;	
 	$real_estate_finder_widget_RSS_count_items = $options['real_estate_finder_widget_RSS_count_items'];
 	
 	?><form method="post" action="">	
@@ -137,15 +130,29 @@ add_action('admin_menu', 'real_estate_finder_menu');
 function real_estate_finder_menu() {
 	add_options_page('Real Estate Finder', 'Real Estate Finder', 8, __FILE__, 'real_estate_finder_options');
 }
-
+add_filter("plugin_action_links", 'real_estate_finder_ActionLink', 10, 2);
+function real_estate_finder_ActionLink( $links, $file ) {
+	    static $this_plugin;		
+		if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__); 
+        if ( $file == $this_plugin ) {
+			$settings_link = "<a href='".admin_url( "options-general.php?page=".$this_plugin )."'>". __('Settings') ."</a>";
+			array_unshift( $links, $settings_link );
+		}
+		return $links;
+	}
 function real_estate_finder_options() {	
 	?>
 	<div class="wrap">
 		<h2>Real Estate Finder</h2>
 <p><b>Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia</b> </p>
-<p> <h3>Add the widget "Real Estate Finder"  to your sidebar from Appearance->Widgets and configure the widget options.</h3></p>
+<p> <h3>Add the widget "Real Estate Finder"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a> and configure the widget options.</h3></p>
  <hr /> <hr />
+  <h2>Funny photos</h2>
+<p><b>Plugin "Funny Photos" displays Best photos of the day and Funny photos on your blog. There are over 5,000 photos.
+Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
+ <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-photos/">Funny photos</h3></a> 
+ <hr />
  <h2>Jobs Finder</h2>
 <p><b>Plugin "Jobs Finder" gives visitors the opportunity to more than 1 million offer of employment.
 Jobs search for U.S., Canada, UK, Australia</b> </p>
@@ -187,6 +194,4 @@ function real_estate_finder_widget_Init()
   register_widget_control(__('Real Estate Finder'), 'real_estate_finder_widget_Admin', 500, 250);
 }
 add_action("plugins_loaded", "real_estate_finder_widget_Init");
-
-
 ?>
