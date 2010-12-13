@@ -4,14 +4,14 @@ Plugin Name:   Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
-Version: 1.2
+Version: 1.3
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 License: GPL2
 */
 define(real_estate_finder_URL_RSS_DEFAULT, 'http://www.worldestatesite.com/feed/');
 define(real_estate_finder_TITLE, 'Real Estate Finder');
-define(real_estate_finder_MAX_SHOWN_ITEMS, 5);
+define(real_estate_finder_MAX_SHOWN_ITEMS, 6);
 
 function real_estate_finder_widget_ShowRss($args)
 {
@@ -71,8 +71,6 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="townhouse" >townhouse</option>
 </select><br />'; 
 $output .= '<center><input type="submit" name="submit" class="submit" value="Search" /></center> </form><br />';
-// end search form
-//	$worldest = 'http://www.worldestatesite.com/';
 	$messages_count = count($messages->items);
 	if($messages_count != 0){
 	 $output .= '<b>Property For sale:</b>';	
@@ -148,6 +146,11 @@ function real_estate_finder_options() {
 Real estate search for U.S., Canada, UK, Australia</b> </p>
 <p> <h3>Add the widget "Real Estate Finder"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a> and configure the widget options.</h3></p>
  <hr /> <hr />
+ <h2>Blog Promotion</h2>
+<p><b>If you produce original news or entertainment content, you can tap into one of the most technologically advanced traffic exchanges among blogs! Start using our Blog Promotion plugin on your site and receive 150%-300% extra traffic free! 
+Idea is simple - the more traffic you send to us, the more we can send you back.</b> </p>
+ <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/blog-promotion/">Blog Promotion</h3></a> 
+ <hr />
   <h2>Funny photos</h2>
 <p><b>Plugin "Funny Photos" displays Best photos of the day and Funny photos on your blog. There are over 5,000 photos.
 Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
@@ -157,25 +160,24 @@ Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
 <p><b>Plugin "Jobs Finder" gives visitors the opportunity to more than 1 million offer of employment.
 Jobs search for U.S., Canada, UK, Australia</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/jobs-finder/">Jobs Finder</h3></a>
- <hr /> <hr />
+ <hr />
  <h2>Funny video online</h2>
 <p><b>Plugin "Funny video online" displays Funny video on your blog. There are over 10,000 video clips.
 Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
- <hr /> <hr />
+ <hr />
 		<h2>Recipe of the Day</h2>
 <p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/recipe-of-the-day/">Recipe of the Day</h3></a>
- <hr /> <hr />
+ <hr />
   		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/joke-of-the-day/">Joke of the Day</h3></a>
-   <hr /> <hr />
+   <hr />
  
  <h2>WP Social Bookmarking</h2>
 <p><b>WP-Social-Bookmarking plugin will add a image below your posts, allowing your visitors to share your posts with their friends, on FaceBook, Twitter, Myspace, Friendfeed, Technorati, del.icio.us, Digg, Google, Yahoo Buzz, StumbleUpon.</b></p>
 <p><b>Plugin suport sharing your posts feed on <a href="http://www.onlinerel.com/">OnlineRel</a>. This helps to promote your blog and get more traffic.</b></p>
-
 <p>Advertise your real estate, cars, items... Buy, Sell, Rent. Free promote your site:
 <ul>
 	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
