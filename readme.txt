@@ -3,7 +3,7 @@ Contributors: allis741
 Donate link: http://www.onlinerel.com/wordpress-plugins/
 Tags: widget, real estate, sidebar, promote, SEO, feed, rss, popular, google maps, real estate listings, listings, properties, property, property management
 Requires at least: 2.5
-Tested up to: 3.0.3
+Tested up to: 3.1
 Stable tag: trunk
 
 Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
@@ -33,6 +33,9 @@ If you're interested in seeing what a default installation of Real Estate Finder
 Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
+
+ = 1.5 =
+Tested upto 3.1 WP 
 
  = 1.4 =
 Changed works upto 3.0.3 WP 
