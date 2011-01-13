@@ -2,14 +2,14 @@
 /*
 Plugin Name: Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 1.5.1
+Version: 1.6
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 */
 
-define(real_estate_finder_URL_RSS_DEFAULT, 'http://www.worldestatesite.com/feed/');
+define(real_estate_finder_URL_RSS_DEFAULT, 'http://www.worldestatesite.com/category/property/feed/');
 define(real_estate_finder_TITLE, 'Real Estate Finder');
 define(real_estate_finder_MAX_SHOWN_ITEMS, 6);
 

@@ -34,6 +34,9 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
+ = 1.6 =
+Updated feed address.  
+
  = 1.5.1 =
  Tested upto 3.1 WP 
 
