@@ -34,6 +34,9 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
+ = 1.7 =
+Updated feed.                                                                                                        
+
  = 1.6 =
 Updated feed address.  
 
