@@ -2,7 +2,7 @@
 /*
 Plugin Name: Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 1.8.2
+Version: 1.8.3
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
@@ -24,11 +24,12 @@ function real_estate_finder_widget_ShowRss($args)
 	if( $options == false ) {
 		$options[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$options[ 'real_estate_finder_widget_RSS_count_items' ] = real_estate_finder_MAX_SHOWN_ITEMS;
-	}
- $RSSurl = real_estate_finder_URL_RSS_DEFAULT;
+	}                                                                                                               
+ $RSSurl = real_estate_finder_URL_RSS_DEFAULT;                                                                      
 	$messages = fetch_rss($RSSurl);
 	$title = $options[ 'real_estate_finder_widget_url_title' ];
 $output = '<!-- Real Estate Finder:  http://www.onlinerel.com/wordpress-plugins/ -->';
+
 $output .= '<form name="forma" method="post" action="http://www.worldestatesite.com/real-estate-search/" target="_blank">
 <b>Country: </b>
 <select name="country" id="country" style="width:150px;">
@@ -39,6 +40,7 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 </select> <br /><b>Location:</b><br />  
  <input type="text" style="width:160px;"  name="location" /> <br />';
 
+
  $output .= '<b>Type:</b> 
 <select name="listing" style="width:150px;">
 <option value="">Select</option>
@@ -48,9 +50,9 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="new home" >new home</option>
 <option value="room for rent" >room for rent</option>
 <option value="sublet" >sublet</option>
-</select>
- <br />
-	 <b>Property:</b>
+</select>                          
+ <br />                                          
+	 <b>Property:</b>                                       
 <select name="property" style="width:150px;" >
 <option value="">Select</option>
 <option value="apartment" >apartment</option>
@@ -65,7 +67,7 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="single family" >single family</option>
 <option value="tic" >tic</option>
 <option value="townhouse" >townhouse</option>
-</select><br />'; 
+</select><br />';                         
 $output .= '<center><input type="submit" name="submit" class="submit" value="Search" /></center> </form><br />';
 	$messages_count = count($messages->items);
 	if($messages_count != 0){
@@ -162,7 +164,7 @@ Jobs search for U.S., Canada, UK, Australia</b> </p>
 Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-video-online/">Funny video online</h3></a> 
  <hr />
-		<h2>Recipe of the Day</h2>
+		<h2>Recipe of the Day</h2>                                                
 <p><b>Plugin "Recipe of the Day" displays categorized recipes on your blog. There are over 20,000 recipes in 40 categories. Recipes are saved on our database, so you don't need to have space for all that information.</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/recipe-of-the-day/">Recipe of the Day</h3></a>
  <hr />

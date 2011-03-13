@@ -20,9 +20,9 @@ If you're interested in seeing what a default installation of Real Estate Finder
 
 == Installation ==
 
-1. Upload the folder real-estate-finder to the /wp-content/plugins/ directory
-2. Activate the plugin Real Estate Finder through the 'Plugins' menu in WordPress
-3. Add the widget to your sidebar from Appearance->Widgets and configure the widget options.
+1. Upload the folder real-estate-finder to the /wp-content/plugins/ directory                                  
+2. Activate the plugin Real Estate Finder through the 'Plugins' menu in WordPress                                                
+3. Add the widget to your sidebar from Appearance->Widgets and configure the widget options.                 
 
 == Screenshots ==
 
@@ -30,12 +30,15 @@ If you're interested in seeing what a default installation of Real Estate Finder
 
 == Frequently Asked Questions ==
 
-Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
+Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.                               
 
 == Changelog ==
 
- = 1.8.2 =
+ = 1.8.3 =
  Tested upto 3.1 WP 
+
+  = 1.8 =
+Updated script.        
 
  = 1.7 =
 Updated feed.                                                                                                        
