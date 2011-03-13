@@ -2,7 +2,7 @@
 /*
 Plugin Name: Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 1.7
+Version: 1.8
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
@@ -15,20 +15,16 @@ define(real_estate_finder_MAX_SHOWN_ITEMS, 6);
 
 function real_estate_finder_widget_ShowRss($args)
 {
-	//@ini_set('allow_url_fopen', 1);	
 	if( file_exists( ABSPATH . WPINC . '/rss.php') ) {
 		require_once(ABSPATH . WPINC . '/rss.php');		
 	} else {
 		require_once(ABSPATH . WPINC . '/rss-functions.php');
 	}
-	
 	$options = get_option('real_estate_finder_widget');
-
 	if( $options == false ) {
 		$options[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$options[ 'real_estate_finder_widget_RSS_count_items' ] = real_estate_finder_MAX_SHOWN_ITEMS;
 	}
-
  $RSSurl = real_estate_finder_URL_RSS_DEFAULT;
 	$messages = fetch_rss($RSSurl);
 	$title = $options[ 'real_estate_finder_widget_url_title' ];
@@ -183,7 +179,7 @@ Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
 <p>Advertise your real estate, cars, items... Buy, Sell, Rent. Free promote your site:
 <ul>
 	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
-	<li><a target="_blank" href="http://www.easyfreeads.com/">Easy Free Ads</a></li>
+	<li><a target="_blank" href="http://www.homeshopworld.com">Home Shop World</a></li>
 	<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site, Sell your Home, Search Homes</a></li>
 </ul>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/wp-social-bookmarking/">WP Social Bookmarking</h3></a>
