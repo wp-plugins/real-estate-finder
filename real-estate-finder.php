@@ -2,7 +2,7 @@
 /*
 Plugin Name: Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 1.8.3
+Version: 1.9
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
@@ -39,8 +39,6 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="Australia">Australia</option>
 </select> <br /><b>Location:</b><br />  
  <input type="text" style="width:160px;"  name="location" /> <br />';
-
-
  $output .= '<b>Type:</b> 
 <select name="listing" style="width:150px;">
 <option value="">Select</option>
@@ -51,8 +49,7 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="room for rent" >room for rent</option>
 <option value="sublet" >sublet</option>
 </select>                          
- <br />                                          
-	 <b>Property:</b>                                       
+ <br />   <b>Property:</b>                                       
 <select name="property" style="width:150px;" >
 <option value="">Select</option>
 <option value="apartment" >apartment</option>
@@ -120,7 +117,6 @@ function real_estate_finder_widget_Admin()
 	</form>
 	<?php
 }
-
 add_action('admin_menu', 'real_estate_finder_menu');
 
 function real_estate_finder_menu() {
@@ -171,9 +167,7 @@ Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
   		<h2>Joke of the Day</h2>
 <p><b>Plugin "Joke of the Day" displays categorized jokes on your blog. There are over 40,000 jokes in 40 categories. Jokes are saved on our database, so you don't need to have space for all that information. </b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/joke-of-the-day/">Joke of the Day</h3></a>
-   <hr />
- 
- <h2>WP Social Bookmarking</h2>
+   <hr />    <h2>WP Social Bookmarking</h2>
 <p>                                                                                                  
 <b>WP-Social-Bookmarking plugin will add a image below your posts, allowing your visitors to share your posts with their friends, on FaceBook, Twitter, Myspace, Friendfeed, Technorati, del.icio.us, Digg, Google, Yahoo Buzz, StumbleUpon.</b></p>
 <p><b>Plugin suport sharing your posts feed on <a href="http://www.onlinerel.com/">OnlineRel</a>. This helps to promote your blog and get more traffic.</b>                                                                                                                                            
