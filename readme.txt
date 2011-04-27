@@ -34,6 +34,9 @@ Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.
 
 == Changelog ==
 
+ = 2.0 =
+Updated script
+
  = 1.9. =
  Tested upto 3.1 WP and fix bugs
 
@@ -60,3 +63,10 @@ Changed works upto 3.0.3 WP
 
   = 1.0 =
  First stable version.
+
+
+== Upgrade Notice ==
+
+ = 2.0 =
+Automatically upgrade the plugin and all previous settings should remain intact.
+Updated script
