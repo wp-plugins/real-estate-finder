@@ -2,7 +2,7 @@
 /*
 Plugin Name: Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 2.0
+Version: 2.1
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
@@ -16,20 +16,19 @@ define(real_estate_finder_MAX_SHOWN_ITEMS, 6);
 function real_estate_finder_widget_ShowRss($args)
 {
 	if( file_exists( ABSPATH . WPINC . '/rss.php') ) {
-		require_once(ABSPATH . WPINC . '/rss.php');		
+require_once(ABSPATH . WPINC . '/rss.php');		
 	} else {
-		require_once(ABSPATH . WPINC . '/rss-functions.php');
+require_once(ABSPATH . WPINC . '/rss-functions.php');
 	}
 	$options = get_option('real_estate_finder_widget');
-	if( $options == false ) {
+if( $options == false ) {
 		$options[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$options[ 'real_estate_finder_widget_RSS_count_items' ] = real_estate_finder_MAX_SHOWN_ITEMS;
 	}                                                                                                               
  $RSSurl = real_estate_finder_URL_RSS_DEFAULT;                                                                      
-	$messages = fetch_rss($RSSurl);
-	$title = $options[ 'real_estate_finder_widget_url_title' ];
+$messages = fetch_rss($RSSurl);
+$title = $options[ 'real_estate_finder_widget_url_title' ];
 $output = '<!-- Real Estate Finder:  http://www.onlinerel.com/wordpress-plugins/ -->';
-
 $output .= '<form name="forma" method="post" action="http://www.worldestatesite.com/real-estate-search/" target="_blank">
 <b>Country: </b>
 <select name="country" id="country" style="width:150px;">
@@ -49,7 +48,8 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="room for rent" >room for rent</option>
 <option value="sublet" >sublet</option>
 </select>                          
- <br />   <b>Property:</b>                                       
+ <br />
+ <b>Property:</b>                                       
 <select name="property" style="width:150px;" >
 <option value="">Select</option>
 <option value="apartment" >apartment</option>
@@ -69,14 +69,14 @@ $output .= '<center><input type="submit" name="submit" class="submit" value="Sea
 	$messages_count = count($messages->items);
 	if($messages_count != 0){
 	 $output .= '<b>Property For sale:</b>';	
-		$output .= '<ul>';		
-		for($i=0; $i<$options['real_estate_finder_widget_RSS_count_items'] && $i<$messages_count; $i++)
+$output .= '<ul>';		
+for($i=0; $i<$options['real_estate_finder_widget_RSS_count_items'] && $i<$messages_count; $i++)
 		{			
 			$output .= '<li>';
 				$output .= '<a target="_blank" href="'.$messages->items[$i]['link'].'">'.$messages->items[$i]['title'].'</a></span>';						
 				$output .= '</li>';
 		}
-		$output .= '</ul>';
+$output .= '</ul>';
 	}	
 	extract($args);	
 	?>
@@ -91,15 +91,15 @@ function real_estate_finder_widget_Admin()
 {
 	$options = $newoptions = get_option('real_estate_finder_widget');	
 	//default settings
-	if( $options == false ) {
+if( $options == false ) {
 		$newoptions[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$newoptions['real_estate_finder_widget_RSS_count_items'] = real_estate_finder_MAX_SHOWN_ITEMS;		
 	}
-	if ( $_POST["real_estate_finder_widget-submit"] ) {
+if ( $_POST["real_estate_finder_widget-submit"] ) {
 		$newoptions['real_estate_finder_widget_url_title'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_url_title"]));
 			$newoptions['real_estate_finder_widget_RSS_count_items'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_RSS_count_items"]));
 	}	
-	if ( $options != $newoptions ) {
+if ( $options != $newoptions ) {
 		$options = $newoptions;
 		update_option('real_estate_finder_widget', $options);		
 	}
@@ -120,7 +120,7 @@ function real_estate_finder_widget_Admin()
 add_action('admin_menu', 'real_estate_finder_menu');
 
 function real_estate_finder_menu() {
-	add_options_page('Real Estate Finder', 'Real Estate Finder', 8, __FILE__, 'real_estate_finder_options');
+add_options_page('Real Estate Finder', 'Real Estate Finder', 8, __FILE__, 'real_estate_finder_options');
 }
 add_filter("plugin_action_links", 'real_estate_finder_ActionLink', 10, 2);
 function real_estate_finder_ActionLink( $links, $file ) {
@@ -145,7 +145,6 @@ Real estate search for U.S., Canada, UK, Australia</b> </p>
 Jobs search for U.S., Canada, UK, Australia</b> </p>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/jobs-finder/">Jobs Finder</h3></a>
  <hr />
-
  <h2>Blog Promotion</h2>
 <p><b>If you produce original news or entertainment content, you can tap into one of the most technologically advanced traffic exchanges among blogs! Start using our Blog Promotion plugin on your site and receive 150%-300% extra traffic free! 
 Idea is simple - the more traffic you send to us, the more we can send you back.</b> </p>
@@ -156,7 +155,6 @@ Idea is simple - the more traffic you send to us, the more we can send you back.
 Add Funny Photos to your sidebar on your blog using  a widget.</b> </p>
  <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/funny-photos/">Funny photos</h3></a> 
  <hr />
-
  <h2>Funny video online</h2>
 <p><b>Plugin "Funny video online" displays Funny video on your blog. There are over 10,000 video clips.
 Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
@@ -188,8 +186,8 @@ Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
 
 function real_estate_finder_widget_Init()
 {
-  register_sidebar_widget(__('Real Estate Finder'), 'real_estate_finder_widget_ShowRss');
-  register_widget_control(__('Real Estate Finder'), 'real_estate_finder_widget_Admin', 500, 250);
+register_sidebar_widget(__('Real Estate Finder'), 'real_estate_finder_widget_ShowRss');
+register_widget_control(__('Real Estate Finder'), 'real_estate_finder_widget_Admin', 500, 250);
 }
 add_action("plugins_loaded", "real_estate_finder_widget_Init");
 ?>
