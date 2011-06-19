@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Real Estate Finder
+Version: 2.2.1
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 2.2
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
@@ -37,19 +37,6 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="UK"  >UK</option>
 <option value="Australia">Australia</option>
 </select><br />';
-/** $output .= '<b>Location:</b><br />  
- <input type="text" style="width:160px;"  name="location" /> <br />';
- $output .= '<b>Type:</b> 
-<select name="listing" style="width:150px;">
-<option value="">Select</option>
-<option value="foreclosure" >foreclosure</option>
-<option value="for sale" >for sale</option>
-<option value="for rent" >for rent</option>
-<option value="new home" >new home</option>
-<option value="room for rent" >room for rent</option>
-<option value="sublet" >sublet</option>
-</select>                          
- <br />'; ***/
   $output .= '<b>Property:</b>                                       
 <select name="property" style="width:150px;" >
 <option value="">Select</option>
@@ -112,11 +99,8 @@ if ( $options != $newoptions ) {
 	<p><label for="real_estate_finder_widget_url_title"><?php _e('Title:'); ?> <input style="width: 350px;" id="real_estate_finder_widget_url_title" name="real_estate_finder_widget_url_title" type="text" value="<?php echo $real_estate_finder_widget_url_title; ?>" /></label></p>
  
 	<p><label for="real_estate_finder_widget_RSS_count_items"><?php _e('Count Items To Show:'); ?> <input  id="real_estate_finder_widget_RSS_count_items" name="real_estate_finder_widget_RSS_count_items" size="2" maxlength="2" type="text" value="<?php echo $real_estate_finder_widget_RSS_count_items?>" /></label></p>
-	
- </p>
-
- 
-	<?php
+	 </p>
+<?php
 }
 add_action('admin_menu', 'real_estate_finder_menu');
 
