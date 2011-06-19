@@ -2,7 +2,7 @@
 /*
 Plugin Name: Real Estate Finder
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
-Version: 2.1
+Version: 2.2
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia
 Author: A.Kilius
@@ -11,7 +11,7 @@ Author URI: http://www.onlinerel.com/wordpress-plugins/
 
 define(real_estate_finder_URL_RSS_DEFAULT, 'http://www.worldestatesite.com/category/property/feed/');
 define(real_estate_finder_TITLE, 'Real Estate Finder');
-define(real_estate_finder_MAX_SHOWN_ITEMS, 6);
+define(real_estate_finder_MAX_SHOWN_ITEMS, 4);
 
 function real_estate_finder_widget_ShowRss($args)
 {
@@ -36,7 +36,8 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="Canada"  >Canada</option>
 <option value="UK"  >UK</option>
 <option value="Australia">Australia</option>
-</select> <br /><b>Location:</b><br />  
+</select><br />';
+/** $output .= '<b>Location:</b><br />  
  <input type="text" style="width:160px;"  name="location" /> <br />';
  $output .= '<b>Type:</b> 
 <select name="listing" style="width:150px;">
@@ -48,8 +49,8 @@ $output .= '<form name="forma" method="post" action="http://www.worldestatesite.
 <option value="room for rent" >room for rent</option>
 <option value="sublet" >sublet</option>
 </select>                          
- <br />
- <b>Property:</b>                                       
+ <br />'; ***/
+  $output .= '<b>Property:</b>                                       
 <select name="property" style="width:150px;" >
 <option value="">Select</option>
 <option value="apartment" >apartment</option>
@@ -95,7 +96,7 @@ if( $options == false ) {
 		$newoptions[ 'real_estate_finder_widget_url_title' ] = real_estate_finder_TITLE;
 		$newoptions['real_estate_finder_widget_RSS_count_items'] = real_estate_finder_MAX_SHOWN_ITEMS;		
 	}
-if ( $_POST["real_estate_finder_widget-submit"] ) {
+if ( $_POST["real_estate_finder_widget_RSS_count_items"] ) {
 		$newoptions['real_estate_finder_widget_url_title'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_url_title"]));
 			$newoptions['real_estate_finder_widget_RSS_count_items'] = strip_tags(stripslashes($_POST["real_estate_finder_widget_RSS_count_items"]));
 	}	
@@ -106,15 +107,15 @@ if ( $options != $newoptions ) {
 	$real_estate_finder_widget_url_title = wp_specialchars($options['real_estate_finder_widget_url_title']);
 	$real_estate_finder_widget_RSS_count_items = $options['real_estate_finder_widget_RSS_count_items'];
 	
-	?><form method="post" action="">	
+	?>
 
 	<p><label for="real_estate_finder_widget_url_title"><?php _e('Title:'); ?> <input style="width: 350px;" id="real_estate_finder_widget_url_title" name="real_estate_finder_widget_url_title" type="text" value="<?php echo $real_estate_finder_widget_url_title; ?>" /></label></p>
  
 	<p><label for="real_estate_finder_widget_RSS_count_items"><?php _e('Count Items To Show:'); ?> <input  id="real_estate_finder_widget_RSS_count_items" name="real_estate_finder_widget_RSS_count_items" size="2" maxlength="2" type="text" value="<?php echo $real_estate_finder_widget_RSS_count_items?>" /></label></p>
 	
-	<br clear='all'></p>
-	<input type="hidden" id="real_estate_finder_widget-submit" name="real_estate_finder_widget-submit" value="1" />	
-	</form>
+ </p>
+
+ 
 	<?php
 }
 add_action('admin_menu', 'real_estate_finder_menu');
@@ -175,7 +176,9 @@ Add Funny YouTube videos to your sidebar on your blog using  a widget.</b> </p>
 <p>Advertise your real estate, cars, items... Buy, Sell, Rent. Free promote your site:
 <ul>
 	<li><a target="_blank" href="http://www.onlinerel.com/">OnlineRel</a></li>
-	<li><a target="_blank" href="http://www.homeshopworld.com">Home Shop World</a></li>
+	<li><a target="_blank" href="http://www.homeshopworld.com">Home Shop World, Free Classified Ads </a></li>
+		<li><a target="_blank" href="http://www.greatjobcenter.com/">Great Job Center. You Are Worth Better Job! </a></li> 
+		<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site, Sell your Home, Search Homes</a></li>
 	<li><a target="_blank" href="http://www.worldestatesite.com/">World Estate Site, Sell your Home, Search Homes</a></li>
 </ul>
 <h3>Get plugin <a target="_blank" href="http://wordpress.org/extend/plugins/wp-social-bookmarking/">WP Social Bookmarking</h3></a>
