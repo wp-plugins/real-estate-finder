@@ -3,7 +3,7 @@ Contributors: allis741
 Donate link: http://www.onlinerel.com/wordpress-plugins/
 Tags: widget, real estate, sidebar, promote, SEO, feed, rss, popular, google maps, real estate listings, listings, properties, property, property management
 Requires at least: 2.5
-Tested up to: 3.1.3
+Tested up to: 3.3.1
 Stable tag: trunk
 
 Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
@@ -15,9 +15,6 @@ Plugin "Real Estate Finder" gives visitors the opportunity to use a large databa
 Real estate search for U.S., Canada, UK, Australia 
 Real Estate Finder are saved on our database, so you don't need to have space for all that information. 
 
-<b>Try the Demo</b>
-If you're interested in seeing what a default installation of Real Estate Finder has to offer, try out the <a target="_blank" href="http://www.worldestatesite.com/">Real Estate Finder</a>
-
 == Installation ==
 
 1. Upload the folder real-estate-finder to the /wp-content/plugins/ directory                                  
@@ -28,11 +25,12 @@ If you're interested in seeing what a default installation of Real Estate Finder
 
 1. Real Estate Finder Widget
 
-== Frequently Asked Questions ==
-
-Please see <a href="http://www.onlinerel.com/wordpress-plugins/">FAQ</a>.                               
-
 == Changelog ==
+
+= 2.3 =
+
+Tested up to 3.3.1 WP     
+Updated script
 
 = 2.2.1 =
 Tested upto 3.1.3 WP and fix bugs
