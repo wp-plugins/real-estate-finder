@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Real Estate Finder
-Version: 2.3
 Plugin URI: http://www.onlinerel.com/wordpress-plugins/
 Description: Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
-Real estate search for U.S., Canada, UK, Australia
+Real estate search for U.S., UK, Canada,  Australia
+Version: 2.4
 Author: A.Kilius
 Author URI: http://www.onlinerel.com/wordpress-plugins/
 */
@@ -12,6 +12,11 @@ Author URI: http://www.onlinerel.com/wordpress-plugins/
 define(real_estate_finder_URL_RSS_DEFAULT, 'http://www.sellonlineproperty.com/category/real-estate/feed/');
 define(real_estate_finder_TITLE, 'Real Estate Finder');
 define(real_estate_finder_MAX_SHOWN_ITEMS, 4);
+
+add_action('admin_menu', 'real_estate_finder_menu');
+function real_estate_finder_menu() {
+ add_menu_page('Real Estate Finder', 'Real Estate Finder', 8, __FILE__, 'real_estate_finder_options');
+}
 
 function real_estate_finder_widget_ShowRss($args)
 {
@@ -24,7 +29,7 @@ if( $options == false ) {
 
 $title = $options[ 'real_estate_finder_widget_url_title' ];
 $output = '<!-- Real Estate Finder:  http://www.onlinerel.com/wordpress-plugins/ -->';
-$output .= '<form name="forma" method="GET" action="http://www.sellonlineproperty.com/" target="_blank">';
+$output .= '<form name="form" method="GET" action="http://www.sellonlineproperty.com/" target="_blank">';
   $output .= '<center><b>Property:</b>  <input type="text" id="s"  name="s"  value="" />';                         
 $output .= '<input type="submit" name="submit" class="submit" value="Search" /></center> </form>';
  $rss = fetch_feed( $RSSurl );
@@ -82,11 +87,7 @@ if ( $options != $newoptions ) {
 	 </p>
 <?php
 }
-add_action('admin_menu', 'real_estate_finder_menu');
 
-function real_estate_finder_menu() {
-add_options_page('Real Estate Finder', 'Real Estate Finder', 8, __FILE__, 'real_estate_finder_options');
-}
 add_filter("plugin_action_links", 'real_estate_finder_ActionLink', 10, 2);
 function real_estate_finder_ActionLink( $links, $file ) {
 	    static $this_plugin;		
@@ -103,7 +104,9 @@ function real_estate_finder_options() {
 		<h2>Real Estate Finder</h2>
 <p><b>Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
 Real estate search for U.S., Canada, UK, Australia</b> </p>
-<p> <h3>Add the widget "Real Estate Finder"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a> and configure the widget options.</h3></p>
+<p> <h3>Add the widget "Real Estate Finder"  to your sidebar from <a href="<? echo "./widgets.php";?>"> Appearance->Widgets</a> and configure the widget options.</h3>
+<h3>More <a href="http://www.onlinerel.com/wordpress-plugins/" target="_blank"> WordPress Plugins</a></h3>
+</p>
 	</div>
 	<?php
 }

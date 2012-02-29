@@ -1,13 +1,13 @@
 === Real Estate Finder ===
 Contributors: allis741 
 Donate link: http://www.onlinerel.com/wordpress-plugins/
-Tags: widget, real estate, sidebar, promote, SEO, feed, rss, popular, google maps, real estate listings, listings, properties, property, property management
+Tags: real estate,  promote, feed, rss, popular, google maps, real estate listings, listings, properties, property,widget, sidebar
 Requires at least: 2.5
 Tested up to: 3.3.1
 Stable tag: trunk
 
 Plugin "Real Estate Finder" gives visitors the opportunity to use a large database of real estate.
-Real estate search for U.S., Canada, UK, Australia
+Real estate search for U.S., UK,Canada,  Australia
  
 == Description ==
 
@@ -27,55 +27,37 @@ Real Estate Finder are saved on our database, so you don't need to have space fo
 
 == Changelog ==
 
+= 2.4 =
+
+* Tested up to 3.3.1 WP     
+* Updated script
+
 = 2.3 =
-
-Tested up to 3.3.1 WP     
-Updated script
-
-= 2.2.1 =
-Tested upto 3.1.3 WP and fix bugs
-
-= 2.1 =
-Tested upto 3.1.2 WP and fix bugs
+* Tested upto 3.1.2 WP and fix bugs
 
 = 2.0 =
-Updated script
+* Updated script
 
 = 1.9. =
-Tested upto 3.1 WP and fix bugs
-
-= 1.8.3 =
-Tested upto 3.1 WP 
+* Tested upto 3.1 WP and fix bugs
 
 = 1.8 =
-Updated script.        
+* Updated script.        
 
 = 1.7 =
-Updated feed.                                                                                                        
+* Updated feed.                                                                                                        
 
 = 1.6 =
-Updated feed address.  
+* Updated feed address.  
 
-= 1.5.1 =
-Tested upto 3.1 WP 
+= 1.5 =
+* Tested upto 3.1 WP 
 
 = 1.4 =
-Changed works upto 3.0.3 WP 
+* Changed works upto 3.0.3 WP 
 
 = 1.2 =
-Fix bugs.
+* Fix bugs.
 
 = 1.0 =
-First stable version.
-
-
-== Upgrade Notice ==
-
-= 2.2.1 =
-Automatically upgrade the plugin and all previous settings should remain intact.
-Tested upto 3.1.3 WP and fix bugs
-
-= 2.1 =
-Automatically upgrade the plugin and all previous settings should remain intact.
-Tested upto 3.1.2 WP and fix bugs
-
+* First stable version.
